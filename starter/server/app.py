@@ -14,6 +14,10 @@ mongo = PyMongo()
 mongo.init_app(app)
 CORS(app)
 
+@app.route('/')
+def index():
+    return jsonify({"message": "Welcome to the API"})
+
 # Route for user login
 @app.route('/login', methods=['POST'])
 def login():
